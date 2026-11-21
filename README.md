@@ -2,8 +2,7 @@
 
 Login and Registration forms built with **HTML5 and CSS3 only**, styled as a botanical
 research journal published on newsprint.
-
-![Login page](screenshots/login-desktop.png)
+ 
 
 ## Screenshots
 
