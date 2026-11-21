@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Makes the page scale properly on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - Bangla Botanical Society</title>
+  <!-- Shared stylesheet used by both pages -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="page page--narrow">
+
+    <!-- ===== Newspaper dateline ===== -->
+    <div class="dateline">
+      <span class="dateline__item">Vol. XII &middot; No. 4</span>
+      <span class="dateline__item"><strong>Sylhet</strong> &middot; Wednesday</span>
+      <span class="dateline__item">Members Only</span>
+    </div>
+
+    <!-- ===== Journal masthead ===== -->
+    <header class="masthead">
+      <p class="masthead__journal">Bangla Botanical Society</p>
+      <h1 class="masthead__title">Herbarium Access</h1>
+      <p class="masthead__subtitle">Specimen records for the national herbarium collection</p>
+    </header>
+
+    <!-- ===== Botanical ornament ===== -->
+    <div class="ornament" aria-hidden="true">
+      <span class="ornament__rule"></span>
+      <span class="ornament__leaf"></span>
+      <span class="ornament__rule"></span>
+    </div>
+
+    <!-- ===== Login form ===== -->
+    <section class="split">
+
+      <!-- Left: slim decorative botanical plate (~32% of the row) -->
+      <aside class="plate" aria-hidden="true">
+        <div class="plate__botanical">
+          <div class="stem"></div>
+        </div>
+        <p class="plate__caption">Plate I - Drynaria quercifolia</p>
+        <p class="plate__text">
+          &ldquo;Every specimen carries the date and place of its collection.
+          Without these two facts the plant is only a shape.&rdquo;
+        </p>
+        <p class="plate__folio">Vol. XII &middot; No. 4 &middot; Folio 218</p>
+      </aside>
+
+      <!-- Right: the actual login fields -->
+      <div class="form-column">
+        <h2 class="section-heading">Sign In</h2>
+        <p class="section-intro">
+          Sign in to annotate your specimen records and loan requests.
+        </p>
+
+        <!-- method="POST" sends the form data to the server -->
+        <form action="login.html" method="POST">
+
+          <!-- Email address -->
+          <div class="field">
+            <label class="field__label" for="login-email">
+              Email Address <span class="required-mark" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="email"
+              id="login-email"
+              name="email"
+              placeholder="name@bs.org.bd"
+              autocomplete="email"
+              required>
+          </div>
+
+          <!-- Password -->
+          <div class="field">
+            <label class="field__label" for="login-password">
+              Password <span class="required-mark" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="password"
+              id="login-password"
+              name="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required>
+          </div>
+
+          <!-- Login button -->
+          <div class="form-actions">
+            <button type="submit" class="btn btn--primary">Sign In</button>
+          </div>
+
+        </form>
+
+        <!-- Link across to the registration page -->
+        <p class="cross-link">
+          Not yet a member?
+          <a href="register.html">Apply for a contributor account</a>.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- ===== Page folio ===== -->
+    <footer class="folio">Bangla Botanical Society &middot; National Herbarium Collection</footer>
+
+  </main>
+
+</body>
+</html>

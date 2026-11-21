@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Makes the page scale properly on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Bangla Botanical Society</title>
+  <!-- Shared stylesheet used by both pages -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="page">
+
+    <!-- ===== Newspaper dateline ===== -->
+    <div class="dateline">
+      <span class="dateline__item">Vol. XII &middot; No. 4</span>
+      <span class="dateline__item"><strong>Sylhet</strong> &middot; Wednesday</span>
+      <span class="dateline__item">Membership Form</span>
+    </div>
+
+    <!-- ===== Journal masthead ===== -->
+    <header class="masthead">
+      <p class="masthead__journal">Bangla Botanical Society</p>
+      <h1 class="masthead__title">Contributor Registration</h1>
+      <p class="masthead__subtitle">Collecting, identifying and recording the flora of Bangladesh</p>
+    </header>
+
+    <!-- ===== Botanical ornament ===== -->
+    <div class="ornament" aria-hidden="true">
+      <span class="ornament__rule"></span>
+      <span class="ornament__leaf"></span>
+      <span class="ornament__rule"></span>
+    </div>
+
+    <!-- ===== Registration form ===== -->
+    <section class="split">
+
+      <!-- Left: slim decorative botanical plate (~32% of the row) -->
+      <aside class="plate" aria-hidden="true">
+        <div class="plate__botanical">
+          <div class="stem"></div>
+        </div>
+        <p class="plate__caption">Plate II - Nymphaea nouchali</p>
+        <p class="plate__text">
+          &ldquo;Collect the plant as you would have it dried:
+          the leaf with its stem, the flower with its bud.&rdquo;
+        </p>
+        <p class="plate__folio">Vol. XII &middot; No. 4 &middot; Folio 219</p>
+      </aside>
+
+      <!-- Right: the registration fields (primary focus) -->
+      <div class="form-column">
+        <h2 class="section-heading">New Contributor</h2>
+        <p class="section-intro">
+          Fields marked <span class="required-mark">*</span> are required.
+        </p>
+
+        <!-- method="POST" sends the form data to the server -->
+        <form action="register.html" method="POST">
+
+          <!-- ============ SECTION I - Identity ============ -->
+          <section class="section">
+            <h3 class="section__heading">
+              Identity
+              <span class="section__number">I</span>
+            </h3>
+
+            <div class="grid-2">
+              <!-- 1. Full name - text input -->
+              <div class="field">
+                <label class="field__label" for="full-name">
+                  Full Name <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="full-name"
+                  name="fullName"
+                  placeholder="Rehana Khatun"
+                  autocomplete="name"
+                  required>
+              </div>
+
+              <!-- 2. Email address - email input -->
+              <div class="field">
+                <label class="field__label" for="email">
+                  Email Address <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="name@bs.org.bd"
+                  autocomplete="email"
+                  required>
+              </div>
+            </div>
+
+            <!-- 3. Password - password input -->
+            <div class="field">
+              <label class="field__label" for="password">
+                Password <span class="required-mark" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="At least 8 characters"
+                autocomplete="new-password"
+                minlength="8"
+                required>
+              <p class="field__hint">At least 8 characters.</p>
+            </div>
+
+            <!-- 4. Gender - radio buttons -->
+            <fieldset>
+              <legend>Gender</legend>
+              <div class="options">
+                <label class="option" for="gender-male">
+                  <input type="radio" id="gender-male" name="gender" value="male">
+                  <span>Male</span>
+                </label>
+                <label class="option" for="gender-female">
+                  <input type="radio" id="gender-female" name="gender" value="female">
+                  <span>Female</span>
+                </label>
+              </div>
+            </fieldset>
+          </section>
+
+          <!-- ============ SECTION II - Field of Study ============ -->
+          <section class="section">
+            <h3 class="section__heading">
+              Field of Study
+              <span class="section__number">II</span>
+            </h3>
+
+            <!-- 6. Dropdown menu - primary speciality -->
+            <div class="field">
+              <label class="field__label" for="speciality">
+                Primary Speciality <span class="required-mark" aria-hidden="true">*</span>
+              </label>
+              <select id="speciality" name="speciality" required>
+                <option value="" selected disabled>Select a speciality</option>
+                <option value="field-taxonomy">Field Taxonomy</option>
+                <option value="plant-ecology">Plant Ecology</option>
+                <option value="ethnobotany">Ethnobotany and Folk Medicine</option>
+                <option value="aquatic-botany">Aquatic and Wetland Botany</option>
+                <option value="conservation">Conservation and Restoration</option>
+                <option value="herbarium-curation">Herbarium Curation</option>
+              </select>
+            </div>
+
+            <!-- 5. Interests - checkboxes -->
+            <fieldset>
+              <legend>Fields of Interest</legend>
+              <div class="options options--boxes">
+                <label class="option" for="interest-mangrove">
+                  <input type="checkbox" id="interest-mangrove" name="interests" value="mangrove">
+                  <span>Mangrove Flora</span>
+                </label>
+                <label class="option" for="interest-orchid">
+                  <input type="checkbox" id="interest-orchid" name="interests" value="orchid">
+                  <span>Orchids</span>
+                </label>
+                <label class="option" for="interest-medicinal">
+                  <input type="checkbox" id="interest-medicinal" name="interests" value="medicinal">
+                  <span>Medicinal Plants</span>
+                </label>
+                <label class="option" for="interest-rice">
+                  <input type="checkbox" id="interest-rice" name="interests" value="rice">
+                  <span>Rice Wild Relatives</span>
+                </label>
+                <label class="option" for="interest-tea">
+                  <input type="checkbox" id="interest-tea" name="interests" value="tea">
+                  <span>Tea and Camellia</span>
+                </label>
+                <label class="option" for="interest-herbarium">
+                  <input type="checkbox" id="interest-herbarium" name="interests" value="herbarium">
+                  <span>Herbarium Methods</span>
+                </label>
+              </div>
+            </fieldset>
+          </section>
+
+          <!-- ============ SECTION III - Correspondence ============ -->
+          <section class="section">
+            <h3 class="section__heading">
+              Correspondence
+              <span class="section__number">III</span>
+            </h3>
+
+            <div class="grid-2">
+              <!-- 7. Date of birth - date input -->
+              <div class="field">
+                <label class="field__label" for="date-of-birth">
+                  Date of Birth <span class="required-mark" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="date"
+                  id="date-of-birth"
+                  name="dateOfBirth"
+                  min="1900-01-01"
+                  max="2026-12-31"
+                  required>
+              </div>
+
+              <!-- 8. Telephone - tel input (Bangladesh format) -->
+              <div class="field">
+                <label class="field__label" for="telephone">
+                  Telephone Number
+                </label>
+                <input
+                  type="tel"
+                  id="telephone"
+                  name="telephone"
+                  placeholder="01712-345678"
+                  autocomplete="tel"
+                  inputmode="tel"
+                  pattern="(?:\+?88)?0?1[3-9](?:[0-9]{8}|[0-9]{1,7}-[0-9]{1,7})"
+                  title="Enter a valid Bangladesh mobile number, for example 01712-345678 or +8801712-345678">
+                <p class="field__hint">
+                  Optional. Start with 01, for example 01712345678.
+                </p>
+              </div>
+            </div>
+
+            <!-- 9. Address / additional information - textarea (full width) -->
+            <div class="field">
+              <label class="field__label" for="address">
+                Address &amp; Additional Information
+              </label>
+              <textarea
+                id="address"
+                name="address"
+                placeholder="Sylhet 3100, Bangladesh. Affiliated institution, field sites you work in, and your herbarium accession number if you already hold one."></textarea>
+            </div>
+          </section>
+
+          <!-- ============ SECTION IV - Declaration ============ -->
+          <section class="section">
+            <h3 class="section__heading">
+              Declaration
+              <span class="section__number">IV</span>
+            </h3>
+
+            <!-- 10. Terms and conditions - single checkbox -->
+            <fieldset>
+              <div class="options">
+                <label class="option option--full" for="terms">
+                  <input type="checkbox" id="terms" name="terms" value="accepted" required>
+                  <span>
+                    I have read and accept the
+                    <a class="link-inline" href="register.html#terms-note">Terms &amp; Conditions</a>
+                    of the Bangla Botanical Society.
+                  </span>
+                </label>
+              </div>
+              <p class="field__hint" id="terms-note">
+                Deposited specimens must be labelled with the date and locality of collection, and remain the property of the society herbarium.
+              </p>
+            </fieldset>
+          </section>
+
+          <!-- 11. Submit button -->
+          <div class="form-actions">
+            <button type="submit" class="btn btn--primary">Submit Registration</button>
+          </div>
+
+        </form>
+
+        <!-- Link back to the login page -->
+        <p class="cross-link">
+          Already a contributor?
+          <a href="login.html">Sign in to your field notebook</a>.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- ===== Page folio ===== -->
+    <footer class="folio">Bangla Botanical Society &middot; National Herbarium Collection</footer>
+
+  </main>
+
+</body>
+</html>
